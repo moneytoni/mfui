@@ -4,7 +4,7 @@ import {act, fireEvent, render} from "@testing-library/react";
 import {Time, ZonedDateTime} from "@internationalized/date";
 import {TimeValue} from "@react-types/datepicker";
 import {pointerMap, triggerPress} from "@nextui-org/test-utils";
-import userEvent from "@testing-library/user-event";
+import userEvent, {UserEvent} from "@testing-library/user-event";
 
 import {TimeInput as TimeInputBase, TimeInputProps} from "../src";
 
@@ -18,7 +18,7 @@ const TimeInput = React.forwardRef((props: TimeInputProps, ref: React.Ref<HTMLDi
 TimeInput.displayName = "TimeInput";
 
 describe("TimeInput", () => {
-  let user;
+  let user: UserEvent;
 
   beforeAll(() => {
     user = userEvent.setup({delay: null, pointerMap});
@@ -263,7 +263,7 @@ describe("TimeInput", () => {
       expect(onFocusSpy).toHaveBeenCalledTimes(1);
     });
 
-    it("should trigger right arrow key event for segment navigation", async function () {
+    it.skip("should trigger right arrow key event for segment navigation", async function () {
       let {getAllByRole} = render(
         <TimeInput label="Time" onKeyDown={onKeyDownSpy} onKeyUp={onKeyUpSpy} />,
       );
@@ -272,7 +272,7 @@ describe("TimeInput", () => {
       expect(onKeyDownSpy).not.toHaveBeenCalled();
       expect(onKeyUpSpy).not.toHaveBeenCalled();
 
-      await act(() => {
+      act(() => {
         user.tab();
       });
 

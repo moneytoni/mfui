@@ -1,6 +1,6 @@
-# Next UI Contributing Guide
+# MF UI Contributing Guide
 
-Hello!, I am very excited that you are interested in contributing with Next UI. However, before submitting your contribution, be sure to take a moment and read the following guidelines.
+Hello!, Before submitting your contribution, be sure to take a moment and read the following guidelines.
 
 - [Code of Conduct](https://github.com/jrgarciadev/nextui/blob/main/CODE_OF_CONDUCT.md)
 - [Extraction request guidelines](#pull-request-guidelines)

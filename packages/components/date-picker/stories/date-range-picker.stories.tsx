@@ -258,7 +258,7 @@ const PresetsTemplate = (args: DateRangePickerProps) => {
     end: endOfMonth(now.add({months: 1})),
   };
 
-  const CustomRadio = (props) => {
+  const CustomRadio = (props: any) => {
     const {children, ...otherProps} = props;
 
     return (

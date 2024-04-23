@@ -95,7 +95,7 @@ const UnavailableDatesTemplate = (args: RangeCalendarProps) => {
     [now.add({days: 23}), now.add({days: 24})],
   ];
 
-  let isDateUnavailable = (date) =>
+  let isDateUnavailable = (date: {compare: (arg0: CalendarDate) => number}) =>
     disabledRanges.some(
       (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,
     );
@@ -193,7 +193,7 @@ const PresetsTemplate = (args: RangeCalendarProps) => {
   let thisMonth = {start: startOfMonth(now), end: endOfMonth(now)};
   let nextMonthValue = {start: startOfMonth(nextMonth), end: endOfMonth(nextMonth)};
 
-  const CustomRadio = (props) => {
+  const CustomRadio = (props: {[x: string]: any; children: any}) => {
     const {children, ...otherProps} = props;
 
     return (
@@ -209,6 +209,7 @@ const PresetsTemplate = (args: RangeCalendarProps) => {
           labelWrapper: "px-1 m-0",
           wrapper: "hidden",
         }}
+        value={otherProps.value}
       >
         {children}
       </Radio>

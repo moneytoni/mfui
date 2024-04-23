@@ -1,5 +1,11 @@
 # @nextui-org/input
 
+## 2.1.21
+
+### Patch Changes
+
+- [#2072](https://github.com/nextui-org/nextui/pull/2072) [`1dacf52f3`](https://github.com/moneytoni/mfui/commit/1dacf52f305a410cbf59d067d1977024d982ad03) Thanks [@black197](https://github.com/black197)! - Fix #2069 keep input component's position steady
+
 ## 2.1.20
 
 ### Patch Changes

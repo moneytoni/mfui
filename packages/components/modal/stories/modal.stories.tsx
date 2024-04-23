@@ -8,7 +8,6 @@ import {Input} from "@nextui-org/input";
 import {Checkbox} from "@nextui-org/checkbox";
 import {Link} from "@nextui-org/link";
 import {MailFilledIcon, LockFilledIcon} from "@nextui-org/shared-icons";
-import Lorem from "react-lorem-component";
 
 import {
   Modal,
@@ -151,9 +150,7 @@ const InsideScrollTemplate = (args: ModalProps) => {
       <Modal {...args} isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
-          <ModalBody>
-            <Lorem count={10} />
-          </ModalBody>
+          <ModalBody>Lorem ipsum Lolor</ModalBody>
           <ModalFooter>
             <Button onPress={onClose}>Close</Button>
           </ModalFooter>
@@ -172,9 +169,7 @@ const OutsideScrollTemplate = (args: ModalProps) => {
       <Modal {...args} isOpen={isOpen} scrollBehavior="outside" onOpenChange={onOpenChange}>
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
-          <ModalBody>
-            <Lorem count={10} />
-          </ModalBody>
+          <ModalBody>Lorem ipsum dolloe</ModalBody>
           <ModalFooter>
             <Button onPress={onClose}>Close</Button>
           </ModalFooter>
@@ -192,9 +187,7 @@ const OpenChangeTemplate = (args: ModalProps) => {
       <Modal {...args} isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
-          <ModalBody>
-            <Lorem count={5} />
-          </ModalBody>
+          <ModalBody>Lorems</ModalBody>
           <ModalFooter>
             <Button onPress={onClose}>Close</Button>
           </ModalFooter>

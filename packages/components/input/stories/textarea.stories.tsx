@@ -106,7 +106,9 @@ const FormTemplate = (args: TextAreaProps) => (
   <form
     className="w-full max-w-xl flex flex-row items-end gap-4"
     onSubmit={(e) => {
-      alert(`Submitted value: ${e.target["textarea"].value}`);
+      const target = e.target as HTMLInputElement;
+
+      alert(`Submitted value: ${target.value}`);
       e.preventDefault();
     }}
   >
@@ -272,7 +274,7 @@ export const WithValidation = {
 
   args: {
     ...defaultProps,
-    validate: (value) => {
+    validate: (value: string | any[]) => {
       if (value.length < 10) {
         return "Comment is too short. Min 10 characters.";
       }

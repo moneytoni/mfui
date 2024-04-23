@@ -133,8 +133,8 @@ const FormTemplate = ({color, variant, ...args}: AutocompleteProps) => {
   return (
     <form
       className="w-full max-w-xs items-start flex flex-col gap-4"
-      onSubmit={(e) => {
-        alert(`Submitted value: ${e.target["favorite-animal"].value}`);
+      onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+        alert(`Submitted value: ${(e.target as HTMLFormElement)["favorite-animal"].value}`);
         e.preventDefault();
       }}
     >
@@ -839,7 +839,7 @@ export const WithValidation = {
   args: {
     ...defaultProps,
     isRequired: true,
-    validate: (value) => {
+    validate: (value: {inputValue: string; selectedKey: string}) => {
       if (value.inputValue === "Cat" || value.selectedKey === "dog") {
         return "Please select a valid animal";
       }

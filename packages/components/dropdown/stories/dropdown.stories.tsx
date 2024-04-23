@@ -294,7 +294,7 @@ const MultipleSelectionTemplate = ({
   );
 };
 
-const WithShortcutTemplate = ({color, variant, ...args}) => (
+const WithShortcutTemplate = ({color, variant, ...args}: any) => (
   <Dropdown {...args}>
     <DropdownTrigger>
       <Button>Trigger</Button>
@@ -367,7 +367,7 @@ const WithStartContentTemplate = ({
   );
 };
 
-const WithEndContentTemplate = ({color, variant, disableAnimation, ...args}) => {
+const WithEndContentTemplate = ({color, variant, disableAnimation, ...args}: any) => {
   const iconClasses = "text-2xl text-default-500 pointer-events-none flex-shrink-0";
 
   return (
@@ -400,7 +400,7 @@ const WithEndContentTemplate = ({color, variant, disableAnimation, ...args}) => 
   );
 };
 
-const WithDescriptionTemplate = ({color, variant, disableAnimation, ...args}) => {
+const WithDescriptionTemplate = ({color, variant, disableAnimation, ...args}: any) => {
   const iconClasses = "text-2xl text-secondary pointer-events-none flex-shrink-0";
 
   return (
@@ -450,7 +450,7 @@ const WithDescriptionTemplate = ({color, variant, disableAnimation, ...args}) =>
   );
 };
 
-const WithSectionsTemplate = ({color, variant, disableAnimation, ...args}) => {
+const WithSectionsTemplate = ({color, variant, disableAnimation, ...args}: any) => {
   const iconClasses = "text-2xl text-secondary pointer-events-none flex-shrink-0";
 
   return (
@@ -510,7 +510,7 @@ const WithSectionsTemplate = ({color, variant, disableAnimation, ...args}) => {
   );
 };
 
-const CustomTriggerTemplate = ({variant, ...args}) => {
+const CustomTriggerTemplate = ({variant, ...args}: any) => {
   return (
     <div className="flex items-center gap-10">
       <Dropdown {...args} placement="bottom-end">
@@ -575,7 +575,7 @@ const CustomTriggerTemplate = ({variant, ...args}) => {
   );
 };
 
-const CustomHTMLTrigger = ({variant, ...args}) => {
+const CustomHTMLTrigger = ({variant, ...args}: {variant: any}) => {
   return (
     <Dropdown {...args}>
       <DropdownTrigger>

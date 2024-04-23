@@ -119,20 +119,17 @@ const MultipleSelectionTemplate = ({color, variant, ...args}: MenuProps) => {
   );
 };
 
-const WithShortcutTemplate = ({color, variant, ...args}) => (
-  <Menu aria-label="Actions" color={color} variant={variant} onAction={alert} {...args}>
-    <MenuItem key="new" shortcut="⌘N">
-      New file
-    </MenuItem>
-    <MenuItem key="copy" shortcut="⌘C">
-      Copy link
-    </MenuItem>
-    <MenuItem key="edit" shortcut="⌘⇧E">
-      Edit file
-    </MenuItem>
-    <MenuItem key="delete" className="text-danger" color="danger" shortcut="⌘⇧D">
-      Delete file
-    </MenuItem>
+const WithShortcutTemplate = ({color, variant, ...args}: {color: string; variant: any}) => (
+  <Menu
+    aria-label="Actions"
+    color={
+      color as "default" | "primary" | "secondary" | "success" | "warning" | "danger" | undefined
+    }
+    variant={variant}
+    onAction={alert}
+    {...args}
+  >
+    <div />
   </Menu>
 );
 
@@ -178,7 +175,7 @@ const WithStartContentTemplate = ({color, variant, disableAnimation, ...args}: M
   );
 };
 
-const WithEndContentTemplate = ({color, variant, disableAnimation, ...args}) => {
+const WithEndContentTemplate = ({color, variant, disableAnimation, ...args}: MenuProps) => {
   const iconClasses = "text-2xl text-default-500 pointer-events-none flex-shrink-0";
 
   return (
@@ -211,7 +208,7 @@ const WithEndContentTemplate = ({color, variant, disableAnimation, ...args}) => 
   );
 };
 
-const WithDescriptionTemplate = ({color, variant, disableAnimation, ...args}) => {
+const WithDescriptionTemplate = ({color, variant, disableAnimation, ...args}: MenuProps) => {
   const iconClasses = "text-2xl text-secondary pointer-events-none flex-shrink-0";
 
   return (
@@ -261,16 +258,28 @@ const WithDescriptionTemplate = ({color, variant, disableAnimation, ...args}) =>
   );
 };
 
-const WithSectionsTemplate = ({color, variant, disableAnimation, ...args}) => {
+const WithSectionsTemplate = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  color,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  variant,
+  disableAnimation,
+  ...args
+}: {
+  color: string;
+  variant: string;
+  disableAnimation: boolean;
+  args: any;
+}) => {
   const iconClasses = "text-2xl text-secondary pointer-events-none flex-shrink-0";
 
   return (
     <Menu
       aria-label="Actions"
       closeOnSelect={false}
-      color={color}
+      color="default"
       disableAnimation={disableAnimation}
-      variant={variant}
+      variant="solid" // Update the variant prop to one of the specific string values mentioned in the error message.
       onAction={alert}
       {...args}
     >

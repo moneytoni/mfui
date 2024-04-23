@@ -5,6 +5,7 @@ import {slider} from "@nextui-org/theme";
 import {InfoIcon, VolumeHighBoldIcon, VolumeLowBoldIcon} from "@nextui-org/shared-icons";
 import {Tooltip} from "@nextui-org/tooltip";
 import {cn} from "@nextui-org/system";
+import {JSX} from "react/jsx-runtime";
 
 import {Slider, SliderProps, SliderValue} from "../src";
 
@@ -326,7 +327,7 @@ export const CustomGetValue = {
     size: "sm",
     label: "Donuts to buy",
     maxValue: 60,
-    getValue: (donuts) => `${donuts} of 60 Donuts`,
+    getValue: (donuts: any) => `${donuts} of 60 Donuts`,
   },
 };
 
@@ -352,7 +353,11 @@ export const CustomRenderThumb = {
       track: "border-s-secondary-100 gap-3",
       filler: ["bg-gradient-to-r from-secondary-100 to-secondary-500"],
     },
-    renderThumb: (props) => (
+    renderThumb: (
+      props: JSX.IntrinsicAttributes &
+        React.ClassAttributes<HTMLDivElement> &
+        React.HTMLAttributes<HTMLDivElement>,
+    ) => (
       <div
         {...props}
         className="group top-1/2 bg-background dark:border-default-400 p-1 border-small border-default-200 shadow-medium rounded-full cursor-grab data-[dragging=true]:cursor-grabbing "
@@ -377,7 +382,7 @@ export const CustomRenderRangeThumb = {
       base: "gap-3",
       filler: ["bg-gradient-to-r from-pink-300 to-cyan-300"],
     },
-    renderThumb: ({index, ...props}) => (
+    renderThumb: ({index, ...props}: {index: number; [key: string]: any}) => (
       <div
         {...props}
         className="group top-1/2 bg-background p-1 border-small border-default-200 dark:border-default-400 shadow-medium rounded-full cursor-grab data-[dragging=true]:cursor-grabbing "
@@ -407,7 +412,7 @@ export const CustomRenderLabel = {
       base: "gap-3",
       filler: ["bg-gradient-to-r from-pink-300 to-cyan-300"],
     },
-    renderLabel: ({children, ...props}) => (
+    renderLabel: ({children, ...props}: {children: React.ReactNode; [key: string]: any}) => (
       <label {...props} className="text-medium flex gap-2 items-center">
         {children}
         <Tooltip
@@ -421,7 +426,7 @@ export const CustomRenderLabel = {
         </Tooltip>
       </label>
     ),
-    renderThumb: ({index, ...props}) => (
+    renderThumb: ({index, ...props}: {index: number; [key: string]: any}) => (
       <div
         {...props}
         className="group top-1/2 bg-background p-1 border-small border-default-200 dark:border-default-400 shadow-medium rounded-full cursor-grab data-[dragging=true]:cursor-grabbing "

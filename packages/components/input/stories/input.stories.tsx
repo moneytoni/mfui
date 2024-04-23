@@ -13,6 +13,8 @@ import {
   CloseFilledIcon,
 } from "@nextui-org/shared-icons";
 import {button} from "@nextui-org/theme";
+import {MergeWithAs} from "@nextui-org/system";
+import {JSX} from "react/jsx-runtime";
 
 import {Input, InputProps, useInput} from "../src";
 
@@ -70,24 +72,77 @@ const defaultProps = {
   label: "Email",
 };
 
-const Template = (args) => (
+const Template = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <div className="w-full max-w-[240px]">
     <Input {...args} />
   </div>
 );
 
-const MirrorTemplate = (args) => (
+const MirrorTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <div className="w-full max-w-xl flex flex-row items-end gap-4">
     <Input {...args} />
     <Input {...args} placeholder="Enter your email" />
   </div>
 );
 
-const FormTemplate = (args) => (
+const FormTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <form
     className="w-full max-w-xl flex flex-row items-end gap-4"
     onSubmit={(e) => {
-      alert(`Submitted value: ${e.target["example"].value}`);
+      const target = e.target as HTMLInputElement;
+
+      alert(`Submitted value: ${target.value}`);
       e.preventDefault();
     }}
   >
@@ -98,7 +153,24 @@ const FormTemplate = (args) => (
   </form>
 );
 
-const PasswordTemplate = (args) => {
+const PasswordTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => {
   const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
 
   const togglePasswordVisibility = () => setIsPasswordVisible(!isPasswordVisible);
@@ -127,10 +199,27 @@ const PasswordTemplate = (args) => {
   );
 };
 
-const RegexValidationTemplate = (args) => {
+const RegexValidationTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => {
   const [value, setValue] = React.useState("");
 
-  const validateEmail = (value) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+  const validateEmail = (value: string) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
 
   const validationState = React.useMemo(() => {
     if (value === "") return undefined;
@@ -152,7 +241,24 @@ const RegexValidationTemplate = (args) => {
   );
 };
 
-const ControlledTemplate = (args) => {
+const ControlledTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => {
   const [value, setValue] = React.useState("");
 
   return (
@@ -163,7 +269,24 @@ const ControlledTemplate = (args) => {
   );
 };
 
-const LabelPlacementTemplate = (args) => (
+const LabelPlacementTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <div className="w-full flex flex-col items-center gap-12">
     <div className="flex flex-col gap-3">
       <h3>Without placeholder</h3>
@@ -194,7 +317,24 @@ const LabelPlacementTemplate = (args) => (
   </div>
 );
 
-const StartContentTemplate = (args) => (
+const StartContentTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <div className="w-full max-w-xl flex flex-row items-end gap-4">
     <Input
       {...args}
@@ -228,7 +368,24 @@ const StartContentTemplate = (args) => (
   </div>
 );
 
-const EndContentTemplate = (args) => (
+const EndContentTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <div className="w-full max-w-xl flex flex-row items-end gap-4">
     <Input
       {...args}
@@ -262,7 +419,24 @@ const EndContentTemplate = (args) => (
   </div>
 );
 
-const StartAndEndContentTemplate = (args) => (
+const StartAndEndContentTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <div className="w-full max-w-xs flex flex-col items-end gap-4">
     <Input
       {...args}
@@ -322,7 +496,24 @@ const StartAndEndContentTemplate = (args) => (
   </div>
 );
 
-const InputTypesTemplate = (args) => (
+const InputTypesTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <div className="grid grid-cols-3 gap-4">
     <Input {...args} label="Text" placeholder="Enter your text" />
     <Input {...args} label="Number" placeholder="Enter your number" type="number" />
@@ -339,7 +530,24 @@ const InputTypesTemplate = (args) => (
   </div>
 );
 
-const CustomWithClassNamesTemplate = (args) => (
+const CustomWithClassNamesTemplate = (
+  args: JSX.IntrinsicAttributes &
+    MergeWithAs<
+      Omit<
+        React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+        "ref"
+      >,
+      Omit<
+        Omit<
+          React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+          "ref"
+        >,
+        never
+      >,
+      InputProps,
+      "input"
+    >,
+) => (
   <div className="w-full max-w-[340px]">
     <Input
       {...args}
@@ -635,7 +843,7 @@ export const WithValidation = {
   args: {
     ...defaultProps,
     type: "number",
-    validate: (value) => {
+    validate: (value: number) => {
       if (value < 0 || value > 100) {
         return "Value must be between 0 and 100";
       }

@@ -1,5 +1,52 @@
 # @nextui-org/react
 
+## 2.3.6
+
+### Patch Changes
+
+- Updated dependencies [[`d532a9da7`](https://github.com/moneytoni/mfui/commit/d532a9da7a24d3552ef1bf0706c9fbf984887ddb), [`31934017a`](https://github.com/moneytoni/mfui/commit/31934017a54627cbc78583674e990dc66dbe303e), [`25484f866`](https://github.com/moneytoni/mfui/commit/25484f866338cf6df549ba0b1082ffd57384eee2), [`6b96ea9c9`](https://github.com/moneytoni/mfui/commit/6b96ea9c9c091d025a886361f50970599a260715), [`1dacf52f3`](https://github.com/moneytoni/mfui/commit/1dacf52f305a410cbf59d067d1977024d982ad03)]:
+  - @nextui-org/table@2.0.33
+  - @nextui-org/theme@2.2.3
+  - @nextui-org/input@2.1.21
+  - @nextui-org/accordion@2.0.32
+  - @nextui-org/autocomplete@2.0.16
+  - @nextui-org/avatar@2.0.27
+  - @nextui-org/badge@2.0.27
+  - @nextui-org/breadcrumbs@2.0.7
+  - @nextui-org/button@2.0.30
+  - @nextui-org/calendar@2.0.3
+  - @nextui-org/card@2.0.27
+  - @nextui-org/checkbox@2.0.29
+  - @nextui-org/chip@2.0.28
+  - @nextui-org/code@2.0.27
+  - @nextui-org/date-input@2.0.3
+  - @nextui-org/date-picker@2.0.6
+  - @nextui-org/divider@2.0.27
+  - @nextui-org/dropdown@2.1.22
+  - @nextui-org/image@2.0.27
+  - @nextui-org/kbd@2.0.28
+  - @nextui-org/link@2.0.29
+  - @nextui-org/listbox@2.1.19
+  - @nextui-org/menu@2.0.21
+  - @nextui-org/modal@2.0.33
+  - @nextui-org/navbar@2.0.30
+  - @nextui-org/pagination@2.0.30
+  - @nextui-org/popover@2.1.20
+  - @nextui-org/progress@2.0.28
+  - @nextui-org/radio@2.0.28
+  - @nextui-org/ripple@2.0.27
+  - @nextui-org/scroll-shadow@2.1.16
+  - @nextui-org/select@2.1.26
+  - @nextui-org/skeleton@2.0.27
+  - @nextui-org/slider@2.2.9
+  - @nextui-org/snippet@2.0.34
+  - @nextui-org/spacer@2.0.27
+  - @nextui-org/spinner@2.0.28
+  - @nextui-org/switch@2.0.28
+  - @nextui-org/tabs@2.0.29
+  - @nextui-org/tooltip@2.0.33
+  - @nextui-org/user@2.0.28
+
 ## 2.3.5
 
 ### Patch Changes

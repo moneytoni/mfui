@@ -255,8 +255,12 @@ const FormTemplate = ({color, variant, ...args}: SelectProps) => {
   return (
     <form
       className="w-full max-w-xs items-end flex flex-col gap-4"
-      onSubmit={(e) => {
-        alert(`Submitted value: ${e.target["favorite-animal"].value}`);
+      onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+        const favoriteAnimalInput = (e.target as HTMLFormElement)[
+          "favorite-animal"
+        ] as HTMLInputElement;
+
+        alert(`Submitted value: ${favoriteAnimalInput.value}`);
         e.preventDefault();
       }}
     >

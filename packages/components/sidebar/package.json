@@ -1,0 +1,61 @@
+{
+  "name": "@mfui/sidebar",
+  "version": "0.0.3",
+  "description": "A reuseable navigation sidebar.",
+  "keywords": [
+    "sidebar"
+  ],
+  "author": "Antoni <antoni.antoni@moneyforward.co.jp>",
+  "homepage": "https://moneyforward.kibe.la",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moneytoni/mfui.git",
+    "directory": "packages/components/sidebar"
+  },
+  "bugs": {
+    "url": "https://github.com/moneytoni/mfui/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "pnpm build:fast --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "framer-motion": ">=4.0.0"
+  },
+  "dependencies": {
+    "@react-aria/focus": "^3.16.2",
+    "@react-aria/interactions": "^3.21.1",
+    "@react-aria/overlays": "^3.21.1",
+    "@react-aria/utils": "^3.23.2",
+    "@react-stately/toggle": "^3.7.2",
+    "@react-stately/utils": "^3.9.1",
+    "react-remove-scroll": "^2.5.6"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  }
+}

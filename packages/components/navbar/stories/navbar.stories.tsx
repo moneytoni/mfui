@@ -5,7 +5,6 @@ import {Link} from "@nextui-org/link";
 import {Button} from "@nextui-org/button";
 import {Avatar} from "@nextui-org/avatar";
 import {Input} from "@nextui-org/input";
-import Lorem from "react-lorem-component";
 import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/dropdown";
 import {
   ChevronDown,
@@ -84,9 +83,10 @@ const App = React.forwardRef(({children}: any, ref: any) => {
       {children}
       <div className="max-w-5xl flex flex-col gap-4 px-10 mt-8">
         <h1>Lorem ipsum dolor sit ame</h1>
-        {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-          <Lorem key={i} className="mb-5 text-lg" count={1} sentenceUpperBound={40} />
-        ))}
+        {[1, 2, 3, 4, 5, 6, 7].map(
+          (i) =>
+            `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nisl ${i}`,
+        )}
       </div>
     </div>
   );

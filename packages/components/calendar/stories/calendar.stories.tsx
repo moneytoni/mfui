@@ -8,13 +8,14 @@ import {
   isWeekend,
   startOfWeek,
   startOfMonth,
+  DateValue,
 } from "@internationalized/date";
 import {I18nProvider, useLocale} from "@react-aria/i18n";
 import {Button, ButtonGroup} from "@nextui-org/button";
 import {Radio, RadioGroup} from "@nextui-org/radio";
 import {cn} from "@nextui-org/system";
 
-import {Calendar, CalendarProps, DateValue} from "../src";
+import {Calendar, CalendarProps} from "../src";
 
 export default {
   title: "Components/Calendar",
@@ -86,7 +87,7 @@ const UnavailableDatesTemplate = (args: CalendarProps) => {
 
   let {locale} = useLocale();
 
-  let isDateUnavailable = (date) =>
+  let isDateUnavailable = (date: DateValue) =>
     isWeekend(date, locale) ||
     disabledRanges.some(
       (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,
@@ -162,7 +163,7 @@ const PresetsTemplate = (args: CalendarProps) => {
   let nextWeek = startOfWeek(now.add({weeks: 1}), locale);
   let nextMonth = startOfMonth(now.add({months: 1}));
 
-  const CustomRadio = (props) => {
+  const CustomRadio = (props: {[x: string]: any; children: any}) => {
     const {children, ...otherProps} = props;
 
     return (
@@ -178,6 +179,7 @@ const PresetsTemplate = (args: CalendarProps) => {
           labelWrapper: "px-1 m-0",
           wrapper: "hidden",
         }}
+        value={value.toString()} // Add the required value property and convert it to a string
       >
         {children}
       </Radio>

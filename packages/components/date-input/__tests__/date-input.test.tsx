@@ -3,7 +3,7 @@ import * as React from "react";
 import {act, fireEvent, render} from "@testing-library/react";
 import {CalendarDate, CalendarDateTime, DateValue, ZonedDateTime} from "@internationalized/date";
 import {pointerMap, triggerPress} from "@nextui-org/test-utils";
-import userEvent from "@testing-library/user-event";
+import userEvent, {UserEvent} from "@testing-library/user-event";
 
 import {DateInput as DateInputBase, DateInputProps} from "../src";
 
@@ -17,7 +17,7 @@ const DateInput = React.forwardRef((props: DateInputProps, ref: React.Ref<HTMLDi
 DateInput.displayName = "DateInput";
 
 describe("DateInput", () => {
-  let user;
+  let user: UserEvent;
 
   beforeAll(() => {
     user = userEvent.setup({delay: null, pointerMap});

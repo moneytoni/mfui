@@ -1,7 +1,6 @@
 import React from "react";
 import {Meta} from "@storybook/react";
 import {button, link, tabs} from "@nextui-org/theme";
-import Lorem from "react-lorem-component";
 import {Input} from "@nextui-org/input";
 import {Button} from "@nextui-org/button";
 import {Card, CardBody} from "@nextui-org/card";
@@ -64,19 +63,19 @@ const defaultProps = {
 const StaticTemplate = (args: TabsProps) => (
   <Tabs aria-label="Tabs example" {...args}>
     <Tab key="world" title="World">
-      <Lorem count={1} sentenceUpperBound={20} />
+      World
     </Tab>
     <Tab key="ny" title="N.Y">
-      <Lorem count={1} sentenceUpperBound={30} />
+      New York
     </Tab>
     <Tab key="business" title="Business">
-      <Lorem count={1} sentenceUpperBound={10} />
+      Business
     </Tab>
     <Tab key="arts" title="Arts">
-      <Lorem count={1} sentenceUpperBound={50} />
+      Arts
     </Tab>
     <Tab key="science" title="Science">
-      <Lorem count={1} sentenceUpperBound={24} />
+      Science
     </Tab>
   </Tabs>
 );
@@ -114,19 +113,19 @@ const ControlledTemplate = (args: TabsProps) => {
         onSelectionChange={setSelected}
       >
         <Tab key="world" title="World">
-          <Lorem count={1} sentenceUpperBound={20} />
+          World
         </Tab>
         <Tab key="ny" title="N.Y">
-          <Lorem count={1} sentenceUpperBound={30} />
+          N.Y
         </Tab>
         <Tab key="business" title="Business">
-          <Lorem count={1} sentenceUpperBound={10} />
+          Business
         </Tab>
         <Tab key="arts" title="Arts">
-          <Lorem count={1} sentenceUpperBound={50} />
+          Arts
         </Tab>
         <Tab key="science" title="Science">
-          <Lorem count={1} sentenceUpperBound={24} />
+          Science
         </Tab>
       </Tabs>
 

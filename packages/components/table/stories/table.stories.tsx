@@ -480,8 +480,8 @@ const SortableTemplate = (args: TableProps) => {
     async sort({items, sortDescriptor}) {
       return {
         items: items.sort((a, b) => {
-          let first = a[sortDescriptor.column!];
-          let second = b[sortDescriptor.column!];
+          let first = a[sortDescriptor.column as keyof SWCharacter];
+          let second = b[sortDescriptor.column as keyof SWCharacter];
           let cmp = (parseInt(first) || first) < (parseInt(second) || second) ? -1 : 1;
 
           if (sortDescriptor.direction === "descending") {

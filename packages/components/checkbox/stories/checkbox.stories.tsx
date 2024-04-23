@@ -70,8 +70,8 @@ const FormTemplate = (args: CheckboxProps) => {
   return (
     <form
       className="flex flex-col items-start gap-4"
-      onSubmit={(e) => {
-        alert(`Submitted value: ${e.target["check"].value}`);
+      onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+        alert(`Submitted value: ${(e.target as HTMLFormElement)["check"].value}`);
         e.preventDefault();
       }}
     >

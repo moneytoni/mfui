@@ -35,7 +35,7 @@ export const WithDefaultAvatar = {
     name: "Junior Garcia",
     avatarProps: {
       name: "Junior Garcia",
-      getInitials: (name) =>
+      getInitials: (name: string) =>
         name
           .split(" ")
           .map((n) => n[0])

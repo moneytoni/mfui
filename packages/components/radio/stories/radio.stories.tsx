@@ -89,7 +89,9 @@ const Template = (args: RadioGroupProps) => {
     <form
       className="flex flex-col items-start gap-4"
       onSubmit={(e) => {
-        alert(`Submitted value: ${e.target["sample"].value}`);
+        const target = e.target as HTMLInputElement;
+
+        alert(`Submitted value: ${target.value}`);
         e.preventDefault();
       }}
     >

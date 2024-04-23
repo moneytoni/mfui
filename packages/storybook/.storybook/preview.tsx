@@ -22,8 +22,8 @@ const decorators: Preview["decorators"] = [
 ];
 
 const commonTheme = {
-  brandTitle: "NextUI",
-  brandUrl: "https://nextui.org",
+  brandTitle: "MFUI",
+  brandUrl: "https://moneyforward.kibe.la",
   brandTarget: "_self",
 };
 
@@ -55,13 +55,13 @@ const parameters: Preview["parameters"] = {
       background: "black",
       appContentBg: "black",
       appBorderRadius: 14,
-      brandImage: "/dark-logo.svg",
+      brandImage: "/mf-logo.svg",
     },
     light: {
       ...themes.light,
       ...commonTheme,
       appBorderRadius: 14,
-      brandImage: "/light-logo.svg",
+      brandImage: "/mf-logo.svg",
     },
   },
 };

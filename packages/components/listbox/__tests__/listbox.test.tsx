@@ -109,7 +109,9 @@ describe("Listbox", () => {
       <Listbox aria-label="Actions" items={listboxItems}>
         {(section) => (
           <ListboxSection aria-label={section.title} items={section.children} title={section.title}>
-            {(item) => <ListboxItem key={item.key}>{item.name}</ListboxItem>}
+            {section.children.map((item) => (
+              <ListboxItem key={item.key}>{item.name}</ListboxItem>
+            ))}
           </ListboxSection>
         )}
       </Listbox>,

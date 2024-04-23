@@ -1,7 +1,6 @@
 import React from "react";
 import {Meta} from "@storybook/react";
 import {scrollShadow, button} from "@nextui-org/theme";
-import Lorem from "react-lorem-component";
 
 import {
   ScrollShadow,
@@ -44,7 +43,7 @@ const defaultProps = {
   ...scrollShadow.defaultVariants,
   visible: "auto",
   className: "w-[300px] h-[400px]",
-  children: <Lorem count={10} />,
+  children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 };
 
 const Template = (args: ScrollShadowProps) => <ScrollShadow {...args} />;
@@ -146,9 +145,7 @@ export const HorizontalOrientation = {
     orientation: "horizontal",
     className: "max-w-[400px] max-h-[500px]",
     children: (
-      <div className="w-[800px]">
-        <Lorem count={10} />,
-      </div>
+      <div className="w-[800px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
     ),
   },
 };
@@ -161,9 +158,7 @@ export const ShadowOffset = {
     orientation: "horizontal",
     className: "max-w-[400px] max-h-[500px]",
     children: (
-      <div className="w-[800px]">
-        <Lorem count={10} />,
-      </div>
+      <div className="w-[800px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
     ),
   },
 };
